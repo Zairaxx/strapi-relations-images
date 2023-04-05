@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pets",
+  "info": {
+    "singularName": "pet",
+    "pluralName": "pets",
+    "displayName": "Pet"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "profilePic": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "pets"
+    }
+  }
+}
